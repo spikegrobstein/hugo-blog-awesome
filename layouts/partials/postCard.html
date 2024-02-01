@@ -1,4 +1,4 @@
-<article class="post-item">
+<article>
     <h4 class="post-item-title">
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     </h4>
@@ -9,4 +9,7 @@
         {{ time.Format $configDateFormat .Date }}
         {{/* OLD FORMAT: .Date.Format $configDateFormat */}}
     </time>
+
+    <div class="page-content">{{ .Content }}</div>
 </article>
+<hr/>
