@@ -16,14 +16,13 @@
     {{- partial "scriptsBodyStart.html" . -}}
     {{- partial "header.html" . -}}
     <div class="wrapper">
-        {{ partial "bio" . }}
         <main aria-label="Content">
             <h3 class="posts-item-note" aria-label="Recent Posts">{{ T "home.recent_posts" }}</h3>
             {{/* Show last 5 posts in reverse date order */}}
             {{ $pagesToShow := where .Site.RegularPages "Type" "in" site.Params.mainSections }}
             {{ $posts := $pagesToShow.ByDate.Reverse }}
             {{ range first 5 $posts }}
-            {{ partial "postCard" . }}
+            {{ partial "post" . }}
             {{ end }}
             {{ if gt (len $posts) 5 }}
             <p>
@@ -33,6 +32,9 @@
             </p>
             {{ end }}
         </main>
+    </div>
+    <div class="older-posts">
+        <a href="/posts">Older posts</a>
     </div>
     {{- partial "footer.html" . -}}
     {{- partial "scriptsBodyEnd.html" . -}}

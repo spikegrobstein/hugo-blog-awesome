@@ -1,4 +1,7 @@
-<article>
+<article class="inline-post">
+    <h1 class="post-item-title">
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </h1>
     {{/* format date string to create an ISO 8601 string */}}
     {{ $ISO_date := "2006-01-02T15:04:05Z0700" }}
     {{ $configDateFormat := .Site.Params.dateFormat | default "2 Jan 2006" }}
@@ -6,8 +9,8 @@
         {{ time.Format $configDateFormat .Date }}
         {{/* OLD FORMAT: .Date.Format $configDateFormat */}}
     </time>
-    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
 
-    <!--<div class="page-content">{{ .Content }}</div>-->
+    <div class="page-content">{{ .Content }}</div>
 </article>
 <hr/>
+
