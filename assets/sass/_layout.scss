@@ -255,3 +255,14 @@ mark {
   color: #000;
   border-radius: 3px;
 }
+
+.older-posts {
+    text-align: center;
+}
+
+.inline-post {
+    margin-top: 2em;
+    border: 1px solid $text-base-color;
+    border-bottom: 4px solid $text-base-color;
+    padding: 1em;
+}
