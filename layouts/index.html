@@ -23,7 +23,7 @@
             {{ $pagesToShow := where .Site.RegularPages "Type" "in" site.Params.mainSections }}
             {{ $posts := $pagesToShow.ByDate.Reverse }}
             {{ range first 5 $posts }}
-            {{ partial "postCard" . }}
+            {{ partial "post" . }}
             {{ end }}
             {{ if gt (len $posts) 5 }}
             <p>
